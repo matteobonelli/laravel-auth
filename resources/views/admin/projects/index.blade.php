@@ -1,7 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <section class="container" id='projects_index'>
-        <h1>Projects List</h1>
+        <div class="d-flex justify-content-between align-items-center my-3">
+            <h1>Projects List</h1>
+            <a href="{{route('admin.projects.create')}}" class="btn btn-primary">Aggiungi Progetto</a>
+        </div>
+        
         <div class="row">
             @foreach ($projects as $project)
             <div class="col-12 col-md-4 col-lg-3 gy-3 d-flex align-items-stretch ">
