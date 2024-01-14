@@ -17,6 +17,12 @@
                         <h2>{{$project->title}}</h2>
                         <p>{{$project->description}}</p>
                         <h6>{{$project->creation_date}}</h6>
+                        <a class="btn btn-primary my-2" href="{{route('admin.projects.edit', $project->id)}}">Modifica</a>
+                        <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Elimina</button>
+                        </form>
                     </div>
                     
                 </div>
