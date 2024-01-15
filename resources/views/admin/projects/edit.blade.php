@@ -23,20 +23,15 @@
                 @enderror
             </div>
 
-            <div class="d-flex">
-                <div class="me-3">
-                    <img src="" id="uploadPreview" width="100" alt="preview">
-                </div>
+            
                 <div class="mb-3">
                     <label for="image">Image</label>
-                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="image" value={{old('image')}}
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="image" value={{old('image', $project->image)}}
                         >
                     @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-    
-            </div>
 
             <div class="mb-3">
                 <label for="creation_date">Data creazione</label>

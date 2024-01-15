@@ -72,6 +72,13 @@ class ProjectController extends Controller
         $slug = Str::slug($form_data['title'], '-');
         $form_data['slug'] = $slug;
         $form_data['user_id'] = $project->user_id;
+        if ($request->hasFile('image')) {
+            if ($project->image) {
+                Storage::delete($project->image);
+            }
+            $path = Storage::put('images', $request->image);
+            $form_data['image'] = $path;
+        }
         $project->update($form_data);
         return to_route('admin.projects.show', $project->id);
     }
