@@ -43,7 +43,7 @@ class ProjectController extends Controller
             $form_data['image'] = $path;
         }
         $newProject = Project::create($form_data);
-        return to_route('admin.projects.show', $newProject->id);
+        return to_route('admin.projects.show', $newProject->slug);
 
     }
 
@@ -80,7 +80,7 @@ class ProjectController extends Controller
             $form_data['image'] = $path;
         }
         $project->update($form_data);
-        return to_route('admin.projects.show', $project->id);
+        return to_route('admin.projects.show', $project->slug);
     }
 
     /**

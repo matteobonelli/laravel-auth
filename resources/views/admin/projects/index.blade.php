@@ -10,15 +10,15 @@
             @foreach ($projects as $project)
             <div class="col-12 col-md-4 col-lg-3 gy-3 d-flex align-items-stretch ">
                 <div class="card">
-                    <a href="{{route('admin.projects.show', $project->id)}}">
+                    <a href="{{route('admin.projects.show', $project->slug)}}">
                         <img src="{{asset('storage/' . $project->image)}}" alt="{{$project->title}}">
                     </a>
                     <div class="p-3">
                         <h2>{{$project->title}}</h2>
                         <p>{{$project->description}}</p>
                         <h6>{{$project->creation_date}}</h6>
-                        <a class="btn btn-primary my-2" href="{{route('admin.projects.edit', $project->id)}}">Modifica</a>
-                        <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
+                        <a class="btn btn-primary my-2" href="{{route('admin.projects.edit', $project->slug)}}">Modifica</a>
+                        <form action="{{route('admin.projects.destroy', $project->slug)}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Elimina</button>
