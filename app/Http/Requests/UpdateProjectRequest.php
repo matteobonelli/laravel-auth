@@ -26,7 +26,7 @@ class UpdateProjectRequest extends FormRequest
             'title' => ['required', 'max:200', Rule::unique('projects')->ignore($this->project)],
             'description' => ['nullable', 'min:5'],
             'creation_date' => ['nullable', 'date'],
-            'image' => ['nullable', 'max:255', 'url']
+            'image' => ['nullable', 'image']
         ];
     }
 
@@ -38,8 +38,7 @@ class UpdateProjectRequest extends FormRequest
             'title.unique' => 'Questo titolo è già esistente',
             'description.min' => 'La descrizione deve avere almeno :min caratteri',
             'creation_date.date' => 'Inserisci la data di creazione con un formato adatto',
-            'image.max' => 'L\'url può essere lungo massimo :max caratteri',
-            'image.url' => 'L\'immagine deve essere un url'
+            'image.image' => 'L\'immagine deve essere un tipo image'
         ];
     }
 }

@@ -11,7 +11,7 @@
             <div class="col-12 col-md-4 col-lg-3 gy-3 d-flex align-items-stretch ">
                 <div class="card">
                     <a href="{{route('admin.projects.show', $project->id)}}">
-                        <img src="{{$project->image}}" alt="{{$project->title}}">
+                        <img src="{{asset('storage/' . $project->image)}}" alt="{{$project->title}}">
                     </a>
                     <div class="p-3">
                         <h2>{{$project->title}}</h2>
