@@ -22,11 +22,11 @@
                 @enderror
             </div>
 
-            <div class="d-flex">
+            <div class="d-flex mb-3">
                 <div class="me-3">
-                    <img src="" id="uploadPreview" width="100" alt="preview">
+                    <img src="https://placehold.co/600x400" id="uploadPreview" width="100" alt="preview">
                 </div>
-                <div class="mb-3">
+                <div>
                     <label for="image">Image</label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="image" value={{old('image')}}
                         >
